@@ -10,7 +10,7 @@ while true; do
     esac
 done
 
-echo "Running Confounds.py to generate the confounds tsv for all participants..."
+echo "Running Confounds.py to generate the overall confounds csv for all participants..."
 chmod +x Confounds.py
 python3 Confounds.py
 
@@ -23,14 +23,14 @@ do
 		cd /sub-$sub/func/
 		echo "Converting the confounds tsv to an AFNI 1D file..."
 		touch confounds_rall.1D
-		1dcat confounds_rall.tsv > confounds_rall.1D
+		1dcat confounds_rall.csv > confounds_rall.1D
 		for run in $(seq -w 1 4)
 		do
 			echo "Demeaning run $run..."
-			3dTstat -prefix rm.mean_r${run} sub-${sub}_run-${run}_MNI152_No2_Smooth.nii.gz
-			3dcalc -a sub-${sub}_run-${run}_MNI152_No2_Smooth.nii.gz -b rm.mean_r${run}+tlrc.BRIK \
+			3dTstat -prefix rm.mean_r${run} sub-${sub}_task-framing_run-${run}_space-MNI152NLin6Asym_desc-smoothAROMAnonaggr_bold.nii.gz
+			3dcalc -a sub-${sub}_task-framing_run-${run}_space-MNI152NLin6Asym_desc-smoothAROMAnonaggr_bold.nii.gz -b rm.mean_r${run}+tlrc.BRIK \
 			-expr 'min(200, a/b*100)*step(a)*step(b)'           \
-			-prefix sub-${sub}_run-${run}_Scaled.nii.gz
+			-prefix sub-${sub}_run-${run}_MNI152_AROMA_Scaled.nii.gz
 		done
 		cd ../..
 	else
