@@ -26,9 +26,6 @@ do
 		1dcat confounds_rall.tsv > confounds_rall.1D
 		for run in $(seq -w 1 4)
 		do
-			echo "Blurring run $run..."
-			3dmerge -1blur_fwhm 6.0 -doall \
-			-prefix sub-${sub}_run-${run}_MNI152_Preproc_Smooth.nii.gz sub-${sub}_task-framing_run-${run}_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz
 			echo "Demeaning run $run..."
 			3dTstat -prefix rm.mean_r${run} sub-${sub}_run-${run}_MNI152_No2_Smooth.nii.gz
 			3dcalc -a sub-${sub}_run-${run}_MNI152_No2_Smooth.nii.gz -b rm.mean_r${run}+tlrc.BRIK \
