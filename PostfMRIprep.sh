@@ -1,6 +1,15 @@
 #!/bin/tcsh -xef
 
 echo "I don't care who you are or your span of participants because I'll just run stuff for everyone."
+
+echo "I'm going to check to see if you installed pandas..."
+if python3 -c "import pkgutil; exit(not pkgutil.find_loader('pandas'))"; then
+    echo "Pandas found. Nice."
+else
+    echo "Why isn't pandas installed? I'll install it for you, rookie >:/"
+    pip3 install pandas
+fi
+
 while true; do
     read -p "You ready to go? Remember, I'll run for everyone..." yn
     case $yn in
