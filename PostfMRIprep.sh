@@ -33,14 +33,6 @@ do
 		echo "Converting the confounds tsv to an AFNI 1D file..."
 		touch confounds_rall.1D # creating 1D file
 		1dcat confounds_rall.csv > confounds_rall.1D # putting info from the csv into the 1D file
-		for run in $(seq 1 4)
-		do
-			echo "Demeaning run $run..."
-			3dTstat -prefix rm.mean_r${run} sub-${sub}_task-framing_run-${run}_space-MNI152NLin6Asym_desc-smoothAROMAnonaggr_bold.nii.gz
-			3dcalc -a sub-${sub}_task-framing_run-${run}_space-MNI152NLin6Asym_desc-smoothAROMAnonaggr_bold.nii.gz -b rm.mean_r${run}+tlrc.BRIK \
-			-expr 'min(200, a/b*100)*step(a)*step(b)'           \
-			-prefix sub-${sub}_run-${run}_MNI152_AROMA_Scaled.nii.gz
-		done
 		cd ../..
 	else
 		echo "No subject $sub folder...moving on..."

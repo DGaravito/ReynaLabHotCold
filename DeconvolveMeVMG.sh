@@ -7,7 +7,7 @@ do
 	then
 		echo "Subject $sub folder found"
 		cd sub-$sub/func/ || exit
-		3dDeconvolve -input sub-${sub}_run-1_MNI152_AROMA_Scaled.nii.gz sub-${sub}_run-2_MNI152_AROMA_Scaled.nii.gz sub-${sub}_run-3_MNI152_AROMA_Scaled.nii.gz sub-${sub}_run-4_MNI152_AROMA_Scaled.nii.gz -local_times \
+		3dDeconvolve -input sub-${sub}_task-framing_run-1_space-MNI152NLin6Asym_desc-smoothAROMAnonaggr_bold.nii.gz sub-${sub}_task-framing_run-2_space-MNI152NLin6Asym_desc-smoothAROMAnonaggr_bold.nii.gz sub-${sub}_task-framing_run-3_space-MNI152NLin6Asym_desc-smoothAROMAnonaggr_bold.nii.gz sub-${sub}_task-framing_run-4_space-MNI152NLin6Asym_desc-smoothAROMAnonaggr_bold.nii.gz -local_times \
 				-polort a 		\
 				-GOFORIT 100		\
 				-allzero_OK		\
