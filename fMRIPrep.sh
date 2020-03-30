@@ -20,7 +20,7 @@ do
 	if [[ -d "sub-$sub" ]]
 	then
 		echo "Subject $sub folder found"
-		cd /sub-$sub/func/
+		cd sub-$sub/func/
 		for run in $(seq -w 1 4)
 		do
     	echo "Trimming 2 dummy scans from run $run"

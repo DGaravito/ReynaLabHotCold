@@ -29,11 +29,11 @@ do
 	if [[ -d "sub-$sub" ]]
 	then
 		echo "Subject $sub folder found"
-		cd /sub-$sub/func/
+		cd sub-$sub/func/
 		echo "Converting the confounds tsv to an AFNI 1D file..."
-		touch confounds_rall.1D
-		1dcat confounds_rall.csv > confounds_rall.1D
-		for run in $(seq -w 1 4)
+		touch confounds_rall.1D # creating 1D file
+		1dcat confounds_rall.csv > confounds_rall.1D # putting info from the csv into the 1D file
+		for run in $(seq 1 4)
 		do
 			echo "Demeaning run $run..."
 			3dTstat -prefix rm.mean_r${run} sub-${sub}_task-framing_run-${run}_space-MNI152NLin6Asym_desc-smoothAROMAnonaggr_bold.nii.gz
