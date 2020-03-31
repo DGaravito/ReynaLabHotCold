@@ -11,11 +11,11 @@ else
 fi
 
 while true; do
-    read -p "You ready to go? Remember, I'll run for everyone..." yn
+    read -p "You ready to go? Remember, I'll run for everyone... " yn
     case $yn in
         [Yy]* ) echo "leggo."; break;;
         [Nn]* ) echo "smh."; exit;;
-        * ) echo "Give me a yes or no; don't play me.";;
+        * ) echo "Give me a yes or no; don't play me. ";;
     esac
 done
 
