@@ -23,7 +23,7 @@ echo "Running Confounds.py to generate the overall confounds csv for all partici
 chmod +x Confounds.py
 python3 Confounds.py
 
-cd ~/Documents/1stHalfFunctional/Output/fmriprep
+cd /Volumes/reynalab/Lab/HotCold/Databases/HC_1stHalfFunctional/Output/fmriprep
 for sub in $(seq -w 1 132)
 do
 	if [[ -d "sub-$sub" ]]
@@ -33,6 +33,14 @@ do
 		echo "Converting the confounds tsv to an AFNI 1D file..."
 		touch confounds_rall.1D # creating 1D file
 		1dcat confounds_rall.csv > confounds_rall.1D # putting info from the csv into the 1D file
+    for run in $(seq -w 1 4)
+		do
+			echo "Demeaning run $run..."
+      3dTstat -prefix rm.mean_r${run} sub-${sub}_task-framing_run-${run}_space-MNI152NLin6Asym_desc-smoothAROMAnonaggr_bold.nii.gz
+			3dcalc -a sub-${sub}_task-framing_run-${run}_space-MNI152NLin6Asym_desc-smoothAROMAnonaggr_bold.nii.gz -b rm.mean_r${run}+tlrc.BRIK \
+			-expr 'min(200, a/b*100)*step(a)*step(b)'           \
+			-prefix sub-${sub}_run-${run}_Scaled.nii.gz
+		done
 		cd ../..
 	else
 		echo "No subject $sub folder...moving on..."
