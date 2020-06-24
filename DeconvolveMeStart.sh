@@ -8,7 +8,7 @@ do
 		echo "Subject $sub folder found"
 		cd sub-$sub/func/ || exit
 		3dDeconvolve -input sub-${sub}_run-1_Scaled.nii.gz sub-${sub}_run-2_Scaled.nii.gz sub-${sub}_run-3_Scaled.nii.gz sub-${sub}_run-4_Scaled.nii.gz -local_times \
-				-mask /Volumes/reynalab/Lab/HotCold/Databases/HC_1stHalfFunctional/Output/fmriprep/sub-${sub}/anat/sub-${sub}_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz \
+				-mask full_mask.resam.${sub}+tlrc \
 				-polort a 		\
 				-GOFORIT 100		\
 				-allzero_OK		\
