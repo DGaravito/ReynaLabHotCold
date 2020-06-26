@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# This script is for making the confounds files that will be converted to 1D format for use in first-levels in AFNI
+
 import os
 import csv
 import glob

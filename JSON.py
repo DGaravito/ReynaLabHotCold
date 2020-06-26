@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# This script is just for mass changing the JSON files to add info and conform to BIDS
+
 import json
 import os
 import glob

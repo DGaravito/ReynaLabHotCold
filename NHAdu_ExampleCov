@@ -1,0 +1,52 @@
+#!/bin/tcsh -xef
+
+# created by uber_ttest.py: version 2.0 (December 28, 2017)
+# creation date: Wed Feb 12 01:28:15 2020
+
+# ---------------------- set process variables ----------------------
+
+set dirA = /Volumes/reynalab/Lab/HotCold/Databases/HC_1stHalfFunctional/Output/fmriprep
+
+# specify and possibly create results directory
+set results_dir = test.results
+if ( ! -d $results_dir ) mkdir $results_dir
+
+# ------------------------- process the data -------------------------
+
+3dttest++ -prefix $results_dir/NHAdu_Example_F-NF              \
+          -setA NonHungryAdults                                \
+             004 "$dirA/sub-004/func/statsStart.004+tlrc[25]" \
+             008 "$dirA/sub-008/func/statsStart.008+tlrc[25]" \
+             009 "$dirA/sub-009/func/statsStart.009+tlrc[25]" \
+             011 "$dirA/sub-011/func/statsStart.011+tlrc[25]" \
+             014 "$dirA/sub-014/func/statsStart.014+tlrc[25]" \
+             015 "$dirA/sub-015/func/statsStart.015+tlrc[25]" \
+             016 "$dirA/sub-016/func/statsStart.016+tlrc[25]" \
+             017 "$dirA/sub-017/func/statsStart.017+tlrc[25]" \
+             018 "$dirA/sub-018/func/statsStart.018+tlrc[25]" \
+             019 "$dirA/sub-019/func/statsStart.019+tlrc[25]" \
+             020 "$dirA/sub-020/func/statsStart.020+tlrc[25]" \
+             021 "$dirA/sub-021/func/statsStart.021+tlrc[25]" \
+             023 "$dirA/sub-023/func/statsStart.023+tlrc[25]" \
+             024 "$dirA/sub-024/func/statsStart.024+tlrc[25]" \
+             039 "$dirA/sub-039/func/statsStart.039+tlrc[25]" \
+             040 "$dirA/sub-040/func/statsStart.040+tlrc[25]" \
+             041 "$dirA/sub-041/func/statsStart.041+tlrc[25]" \
+             042 "$dirA/sub-042/func/statsStart.042+tlrc[25]" \
+             043 "$dirA/sub-043/func/statsStart.043+tlrc[25]" \
+             045 "$dirA/sub-045/func/statsStart.045+tlrc[25]" \
+             046 "$dirA/sub-046/func/statsStart.046+tlrc[25]" \
+             054 "$dirA/sub-054/func/statsStart.054+tlrc[25]" \
+             057 "$dirA/sub-057/func/statsStart.057+tlrc[25]" \
+             063 "$dirA/sub-063/func/statsStart.063+tlrc[25]" \
+             064 "$dirA/sub-064/func/statsStart.064+tlrc[25]" \
+             071 "$dirA/sub-071/func/statsStart.071+tlrc[25]" \
+             077 "$dirA/sub-077/func/statsStart.077+tlrc[25]" \
+             083 "$dirA/sub-083/func/statsStart.083+tlrc[25]" \
+             084 "$dirA/sub-084/func/statsStart.084+tlrc[25]" \
+             120 "$dirA/sub-120/func/statsStart.120+tlrc[25]" \
+             125 "$dirA/sub-125/func/statsStart.125+tlrc[25]" \
+             126 "$dirA/sub-126/func/statsStart.126+tlrc[25]" \
+             127 "$dirA/sub-127/func/statsStart.127+tlrc[25]" \
+             128 "$dirA/sub-128/func/statsStart.128+tlrc[25]" \
+          -covariates filename

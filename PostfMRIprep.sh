@@ -35,12 +35,22 @@ do
 		1dcat confounds_rall.csv > confounds_rall.1D # putting info from the csv into the 1D file
     for run in $(seq -w 1 4)
 		do
-			echo "Demeaning run $run..."
-      3dTstat -prefix rm.mean_r${run} sub-${sub}_task-framing_run-${run}_space-MNI152NLin6Asym_desc-smoothAROMAnonaggr_bold.nii.gz
+      echo "Demeaning run $run..."
+			3dTstat -prefix rm.mean_r${run} sub-${sub}_task-framing_run-${run}_space-MNI152NLin6Asym_desc-smoothAROMAnonaggr_bold.nii.gz
 			3dcalc -a sub-${sub}_task-framing_run-${run}_space-MNI152NLin6Asym_desc-smoothAROMAnonaggr_bold.nii.gz -b rm.mean_r${run}+tlrc.BRIK \
 			-expr 'min(200, a/b*100)*step(a)*step(b)'           \
 			-prefix sub-${sub}_run-${run}_Scaled.nii.gz
 		done
+    echo "Creating masks for $sub..."
+    # creates a total mask from all the run masks; fill gaps and holes
+		3dmask_tool -fill_holes -inputs sub-${sub}_task-framing_run-*_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz -union -prefix full_mask.${sub}
+		3dresample -master sub-${sub}_task-framing_run-1_space-MNI152NLin6Asym_desc-smoothAROMAnonaggr_bold.nii.gz -prefix full_mask.resam.${sub} -input full_mask.${sub}+tlrc
+
+		# create a more liberal mask by resampling the MNI templatee to your mask
+		3dresample -master full_mask.resam.${sub}+tlrc -prefix rm.resam.group -input /Volumes/reynalab/Lab/HotCold/Databases/HC_1stHalfFunctional/mni152_2009_256.nii.gz
+
+		# convert the above resampling to a binary mask; fill gaps and holes
+		3dmask_tool -dilate_input 5 -5 -fill_holes -input rm.resam.group+tlrc -prefix mask_group
 		cd ../..
 	else
 		echo "No subject $sub folder...moving on..."
