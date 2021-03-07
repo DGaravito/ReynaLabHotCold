@@ -1,6 +1,6 @@
 #!/bin/tcsh -xef
 
-# created by uber_ttest.py: version 2.0 (December 31, 2017)
+# created by uber_ttest.py: version 2.0 (December 37, 2017)
 # creation date: Wed Feb 12 02:17:03 2020
 
 # ---------------------- set process variables ----------------------
@@ -13,39 +13,41 @@ if ( ! -d $results_dir ) mkdir $results_dir
 
 # ------------------------- process the data -------------------------
 
-3dttest++ -prefix $results_dir/NHAdo_NoCov_F-NF -AminusB   \
-          -setA NonHungryAdolescents                                  \
-             001 "$dirA/sub-001/func/statsStart.001+tlrc[25]" \
-             002 "$dirA/sub-002/func/statsStart.002+tlrc[25]" \
-             003 "$dirA/sub-003/func/statsStart.003+tlrc[25]" \
-             005 "$dirA/sub-005/func/statsStart.005+tlrc[25]" \
-             006 "$dirA/sub-006/func/statsStart.006+tlrc[25]" \
-             007 "$dirA/sub-007/func/statsStart.007+tlrc[25]" \
-             013 "$dirA/sub-013/func/statsStart.013+tlrc[25]" \
-             022 "$dirA/sub-022/func/statsStart.022+tlrc[25]" \
-             025 "$dirA/sub-025/func/statsStart.025+tlrc[25]" \
-             036 "$dirA/sub-036/func/statsStart.036+tlrc[25]" \
-             037 "$dirA/sub-037/func/statsStart.037+tlrc[25]" \
-             052 "$dirA/sub-052/func/statsStart.052+tlrc[25]" \
-             053 "$dirA/sub-053/func/statsStart.053+tlrc[25]" \
-             055 "$dirA/sub-055/func/statsStart.055+tlrc[25]" \
-             056 "$dirA/sub-056/func/statsStart.056+tlrc[25]" \
-             060 "$dirA/sub-060/func/statsStart.060+tlrc[25]" \
-             072 "$dirA/sub-072/func/statsStart.072+tlrc[25]" \
-             078 "$dirA/sub-078/func/statsStart.078+tlrc[25]" \
-             079 "$dirA/sub-079/func/statsStart.079+tlrc[25]" \
-             080 "$dirA/sub-080/func/statsStart.080+tlrc[25]" \
-             081 "$dirA/sub-081/func/statsStart.081+tlrc[25]" \
-             082 "$dirA/sub-082/func/statsStart.082+tlrc[25]" \
-             090 "$dirA/sub-090/func/statsStart.090+tlrc[25]" \
-             102 "$dirA/sub-102/func/statsStart.102+tlrc[25]" \
-             114 "$dirA/sub-114/func/statsStart.114+tlrc[25]" \
-             116 "$dirA/sub-116/func/statsStart.116+tlrc[25]" \
-             117 "$dirA/sub-117/func/statsStart.117+tlrc[25]" \
-             118 "$dirA/sub-118/func/statsStart.118+tlrc[25]" \
-             122 "$dirA/sub-122/func/statsStart.122+tlrc[25]" \
-             124 "$dirA/sub-124/func/statsStart.124+tlrc[25]" \
-             129 "$dirA/sub-129/func/statsStart.129+tlrc[25]" \
-             130 "$dirA/sub-130/func/statsStart.130+tlrc[25]" \
-             131 "$dirA/sub-131/func/statsStart.131+tlrc[25]" \
-             132 "$dirA/sub-132/func/statsStart.132+tlrc[25]"
+3dttest++ -prefix $results_dir/NHAdo_NoCov_MF-MNF  \
+          -mask $dirA/fullHC_mask+tlrc \
+          -AminusB   \
+          -setA NonHungryAdolescents \
+             001 "$dirA/sub-001/func/statsStart.001+tlrc[37]" \
+             002 "$dirA/sub-002/func/statsStart.002+tlrc[37]" \
+             003 "$dirA/sub-003/func/statsStart.003+tlrc[37]" \
+             005 "$dirA/sub-005/func/statsStart.005+tlrc[37]" \
+             006 "$dirA/sub-006/func/statsStart.006+tlrc[37]" \
+             007 "$dirA/sub-007/func/statsStart.007+tlrc[37]" \
+             013 "$dirA/sub-013/func/statsStart.013+tlrc[37]" \
+             022 "$dirA/sub-022/func/statsStart.022+tlrc[37]" \
+             025 "$dirA/sub-025/func/statsStart.025+tlrc[37]" \
+             036 "$dirA/sub-036/func/statsStart.036+tlrc[37]" \
+             037 "$dirA/sub-037/func/statsStart.037+tlrc[37]" \
+             052 "$dirA/sub-052/func/statsStart.052+tlrc[37]" \
+             053 "$dirA/sub-053/func/statsStart.053+tlrc[37]" \
+             055 "$dirA/sub-055/func/statsStart.055+tlrc[37]" \
+             056 "$dirA/sub-056/func/statsStart.056+tlrc[37]" \
+             060 "$dirA/sub-060/func/statsStart.060+tlrc[37]" \
+             072 "$dirA/sub-072/func/statsStart.072+tlrc[37]" \
+             078 "$dirA/sub-078/func/statsStart.078+tlrc[37]" \
+             079 "$dirA/sub-079/func/statsStart.079+tlrc[37]" \
+             080 "$dirA/sub-080/func/statsStart.080+tlrc[37]" \
+             081 "$dirA/sub-081/func/statsStart.081+tlrc[37]" \
+             082 "$dirA/sub-082/func/statsStart.082+tlrc[37]" \
+             090 "$dirA/sub-090/func/statsStart.090+tlrc[37]" \
+             102 "$dirA/sub-102/func/statsStart.102+tlrc[37]" \
+             114 "$dirA/sub-114/func/statsStart.114+tlrc[37]" \
+             116 "$dirA/sub-116/func/statsStart.116+tlrc[37]" \
+             117 "$dirA/sub-117/func/statsStart.117+tlrc[37]" \
+             118 "$dirA/sub-118/func/statsStart.118+tlrc[37]" \
+             122 "$dirA/sub-122/func/statsStart.122+tlrc[37]" \
+             124 "$dirA/sub-124/func/statsStart.124+tlrc[37]" \
+             129 "$dirA/sub-129/func/statsStart.129+tlrc[37]" \
+             130 "$dirA/sub-130/func/statsStart.130+tlrc[37]" \
+             131 "$dirA/sub-131/func/statsStart.131+tlrc[37]" \
+             132 "$dirA/sub-132/func/statsStart.132+tlrc[37]"

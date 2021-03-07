@@ -13,36 +13,40 @@ if ( ! -d $results_dir ) mkdir $results_dir
 
 # ------------------------- process the data -------------------------
 
-3dttest++ -prefix $results_dir/NHAdu-NHAdo_NoCov_F-NF  \
+3dttest++ -prefix $results_dir/H-NHAdo_NoCov_F-NF  \
           -mask $dirA/fullHC_mask+tlrc \
           -AminusB   \
           -setA NonHungryAdolescents \
-            028 "$dirA/sub-028/func/statsStart.028+tlrc[25]" \
-            038 "$dirA/sub-038/func/statsStart.038+tlrc[25]" \
-            047 "$dirA/sub-047/func/statsStart.047+tlrc[25]" \
-            048 "$dirA/sub-048/func/statsStart.048+tlrc[25]" \
-            049 "$dirA/sub-049/func/statsStart.049+tlrc[25]" \
-            050 "$dirA/sub-050/func/statsStart.050+tlrc[25]" \
-            051 "$dirA/sub-051/func/statsStart.051+tlrc[25]" \
-            058 "$dirA/sub-058/func/statsStart.058+tlrc[25]" \
-            059 "$dirA/sub-059/func/statsStart.059+tlrc[25]" \
-            061 "$dirA/sub-061/func/statsStart.061+tlrc[25]" \
-            062 "$dirA/sub-062/func/statsStart.062+tlrc[25]" \
-            065 "$dirA/sub-065/func/statsStart.065+tlrc[25]" \
-            066 "$dirA/sub-066/func/statsStart.066+tlrc[25]" \
-            067 "$dirA/sub-067/func/statsStart.067+tlrc[25]" \
-            068 "$dirA/sub-068/func/statsStart.068+tlrc[25]" \
-            070 "$dirA/sub-070/func/statsStart.070+tlrc[25]" \
-            073 "$dirA/sub-073/func/statsStart.073+tlrc[25]" \
-            074 "$dirA/sub-074/func/statsStart.074+tlrc[25]" \
-            075 "$dirA/sub-075/func/statsStart.075+tlrc[25]" \
-            076 "$dirA/sub-076/func/statsStart.076+tlrc[25]" \
-            086 "$dirA/sub-086/func/statsStart.086+tlrc[25]" \
-            088 "$dirA/sub-088/func/statsStart.088+tlrc[25]" \
-            089 "$dirA/sub-089/func/statsStart.089+tlrc[25]" \
-            101 "$dirA/sub-101/func/statsStart.101+tlrc[25]" \
-            119 "$dirA/sub-119/func/statsStart.119+tlrc[25]" \
-            123 "$dirA/sub-123/func/statsStart.123+tlrc[25]" \
+            027 "$dirA/sub-027/func/statsStart.027+tlrc[25]" \
+            029 "$dirA/sub-029/func/statsStart.029+tlrc[25]" \
+            030 "$dirA/sub-030/func/statsStart.030+tlrc[25]" \
+            032 "$dirA/sub-032/func/statsStart.032+tlrc[25]" \
+            033 "$dirA/sub-033/func/statsStart.033+tlrc[25]" \
+            034 "$dirA/sub-034/func/statsStart.034+tlrc[25]" \
+            035 "$dirA/sub-035/func/statsStart.035+tlrc[25]" \
+            069 "$dirA/sub-069/func/statsStart.069+tlrc[25]" \
+            085 "$dirA/sub-085/func/statsStart.085+tlrc[25]" \
+            087 "$dirA/sub-087/func/statsStart.087+tlrc[25]" \
+            091 "$dirA/sub-091/func/statsStart.091+tlrc[25]" \
+            092 "$dirA/sub-092/func/statsStart.092+tlrc[25]" \
+            093 "$dirA/sub-093/func/statsStart.093+tlrc[25]" \
+            094 "$dirA/sub-094/func/statsStart.094+tlrc[25]" \
+            095 "$dirA/sub-095/func/statsStart.095+tlrc[25]" \
+            096 "$dirA/sub-096/func/statsStart.096+tlrc[25]" \
+            097 "$dirA/sub-097/func/statsStart.097+tlrc[25]" \
+            099 "$dirA/sub-099/func/statsStart.099+tlrc[25]" \
+            100 "$dirA/sub-100/func/statsStart.100+tlrc[25]" \
+            103 "$dirA/sub-103/func/statsStart.103+tlrc[25]" \
+            104 "$dirA/sub-104/func/statsStart.104+tlrc[25]" \
+            105 "$dirA/sub-105/func/statsStart.105+tlrc[25]" \
+            106 "$dirA/sub-106/func/statsStart.106+tlrc[25]" \
+            107 "$dirA/sub-107/func/statsStart.107+tlrc[25]" \
+            108 "$dirA/sub-108/func/statsStart.108+tlrc[25]" \
+            109 "$dirA/sub-109/func/statsStart.109+tlrc[25]" \
+            110 "$dirA/sub-110/func/statsStart.110+tlrc[25]" \
+            111 "$dirA/sub-111/func/statsStart.111+tlrc[25]" \
+            113 "$dirA/sub-113/func/statsStart.113+tlrc[25]" \
+            121 "$dirA/sub-121/func/statsStart.121+tlrc[25]" \
           -setB NonHungryAdolescents                                   \
             001 "$dirA/sub-001/func/statsStart.001+tlrc[25]" \
             002 "$dirA/sub-002/func/statsStart.002+tlrc[25]" \
