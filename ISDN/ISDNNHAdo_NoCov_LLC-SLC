@@ -1,0 +1,83 @@
+#!/bin/tcsh -xef
+
+# created by uber_ttest.py: version 2.0 (December 37, 2017)
+# creation date: Wed Feb 12 02:17:03 2020
+
+# ---------------------- set process variables ----------------------
+
+set dirA = /Volumes/Reyna-Lab/Lab/HotCold/Databases/HC_1stHalfFunctional/Output/fmriprep
+
+# specify and possibly create results directory
+set results_dir = test.results
+if ( ! -d $results_dir ) mkdir $results_dir
+
+# ------------------------- process the data -------------------------
+
+3dttest++ -Clustsim -prefix $results_dir/ISDNNHAdo_NoCov_LR-SR  \
+          -mask $dirA/fullHC_mask+tlrc \
+          -AminusB   \
+          -setA NonHungryAdolescents \
+             001 "$dirA/sub-001/func/stats.ISDN001+tlrc[64]" \
+             002 "$dirA/sub-002/func/stats.ISDN002+tlrc[64]" \
+             003 "$dirA/sub-003/func/stats.ISDN003+tlrc[64]" \
+             005 "$dirA/sub-005/func/stats.ISDN005+tlrc[64]" \
+             006 "$dirA/sub-006/func/stats.ISDN006+tlrc[64]" \
+             007 "$dirA/sub-007/func/stats.ISDN007+tlrc[64]" \
+             013 "$dirA/sub-013/func/stats.ISDN013+tlrc[64]" \
+             022 "$dirA/sub-022/func/stats.ISDN022+tlrc[64]" \
+             025 "$dirA/sub-025/func/stats.ISDN025+tlrc[64]" \
+             027 "$dirA/sub-027/func/stats.ISDN027+tlrc[64]" \
+             029 "$dirA/sub-029/func/stats.ISDN029+tlrc[64]" \
+             030 "$dirA/sub-030/func/stats.ISDN030+tlrc[64]" \
+             032 "$dirA/sub-032/func/stats.ISDN032+tlrc[64]" \
+             033 "$dirA/sub-033/func/stats.ISDN033+tlrc[64]" \
+             034 "$dirA/sub-034/func/stats.ISDN034+tlrc[64]" \
+             035 "$dirA/sub-035/func/stats.ISDN035+tlrc[64]" \
+             036 "$dirA/sub-036/func/stats.ISDN036+tlrc[64]" \
+             037 "$dirA/sub-037/func/stats.ISDN037+tlrc[64]" \
+             052 "$dirA/sub-052/func/stats.ISDN052+tlrc[64]" \
+             053 "$dirA/sub-053/func/stats.ISDN053+tlrc[64]" \
+             055 "$dirA/sub-055/func/stats.ISDN055+tlrc[64]" \
+             056 "$dirA/sub-056/func/stats.ISDN056+tlrc[64]" \
+             060 "$dirA/sub-060/func/stats.ISDN060+tlrc[64]" \
+             069 "$dirA/sub-069/func/stats.ISDN069+tlrc[64]" \
+             072 "$dirA/sub-072/func/stats.ISDN072+tlrc[64]" \
+             078 "$dirA/sub-078/func/stats.ISDN078+tlrc[64]" \
+             079 "$dirA/sub-079/func/stats.ISDN079+tlrc[64]" \
+             080 "$dirA/sub-080/func/stats.ISDN080+tlrc[64]" \
+             081 "$dirA/sub-081/func/stats.ISDN081+tlrc[64]" \
+             082 "$dirA/sub-082/func/stats.ISDN082+tlrc[64]" \
+             085 "$dirA/sub-085/func/stats.ISDN085+tlrc[64]" \
+             087 "$dirA/sub-087/func/stats.ISDN087+tlrc[64]" \
+             090 "$dirA/sub-090/func/stats.ISDN090+tlrc[64]" \
+             091 "$dirA/sub-091/func/stats.ISDN091+tlrc[64]" \
+             092 "$dirA/sub-092/func/stats.ISDN092+tlrc[64]" \
+             093 "$dirA/sub-093/func/stats.ISDN093+tlrc[64]" \
+             094 "$dirA/sub-094/func/stats.ISDN094+tlrc[64]" \
+             095 "$dirA/sub-095/func/stats.ISDN095+tlrc[64]" \
+             096 "$dirA/sub-096/func/stats.ISDN096+tlrc[64]" \
+             097 "$dirA/sub-097/func/stats.ISDN097+tlrc[64]" \
+             099 "$dirA/sub-099/func/stats.ISDN099+tlrc[64]" \
+             100 "$dirA/sub-100/func/stats.ISDN100+tlrc[64]" \
+             102 "$dirA/sub-102/func/stats.ISDN102+tlrc[64]" \
+             103 "$dirA/sub-103/func/stats.ISDN103+tlrc[64]" \
+             104 "$dirA/sub-104/func/stats.ISDN104+tlrc[64]" \
+             105 "$dirA/sub-105/func/stats.ISDN105+tlrc[64]" \
+             106 "$dirA/sub-106/func/stats.ISDN106+tlrc[64]" \
+             107 "$dirA/sub-107/func/stats.ISDN107+tlrc[64]" \
+             108 "$dirA/sub-108/func/stats.ISDN108+tlrc[64]" \
+             109 "$dirA/sub-109/func/stats.ISDN109+tlrc[64]" \
+             110 "$dirA/sub-110/func/stats.ISDN110+tlrc[64]" \
+             111 "$dirA/sub-111/func/stats.ISDN111+tlrc[64]" \
+             113 "$dirA/sub-113/func/stats.ISDN113+tlrc[64]" \
+             114 "$dirA/sub-114/func/stats.ISDN114+tlrc[64]" \
+             116 "$dirA/sub-116/func/stats.ISDN116+tlrc[64]" \
+             117 "$dirA/sub-117/func/stats.ISDN117+tlrc[64]" \
+             118 "$dirA/sub-118/func/stats.ISDN118+tlrc[64]" \
+             121 "$dirA/sub-121/func/stats.ISDN121+tlrc[64]" \
+             122 "$dirA/sub-122/func/stats.ISDN122+tlrc[64]" \
+             124 "$dirA/sub-124/func/stats.ISDN124+tlrc[64]" \
+             129 "$dirA/sub-129/func/stats.ISDN129+tlrc[64]" \
+             130 "$dirA/sub-130/func/stats.ISDN130+tlrc[64]" \
+             131 "$dirA/sub-131/func/stats.ISDN131+tlrc[64]" \
+             132 "$dirA/sub-132/func/stats.ISDN132+tlrc[64]"
